@@ -1,16 +1,9 @@
-const Card = (props: {
-  img: string;
-  rating: number;
-  comments: number;
-  location: string;
-  discription: string;
-  price: number;
-  openSpots: number;
-}) => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const Card = (props: { item: any }) => {
   let badgeText;
-  if (props.openSpots === 0) {
+  if (props.item.openSpots === 0) {
     badgeText = 'SOLD OUT';
-  } else if (props.location === 'Online') {
+  } else if (props.item.location === 'Online') {
     badgeText = 'ONLINE';
   }
   return (
@@ -22,23 +15,24 @@ const Card = (props: {
       )}
       <img
         className="mb-2 rounded-2xl"
-        src={props.img}
+        src={props.item.coverImg}
         alt="Photo of Catie Zaferes"
       />
       <div className="flex items-center gap-1">
         {' '}
         <img className="h-[14px] w-[14px] " src="/public/star.png" alt="" />
-        <h3 className="text-xs font-light">{props.rating}</h3>
+        <h3 className="text-xs font-light">{props.item.stats.rating}</h3>
         <p
           className="text-xs font-light text-gray-400
         "
         >
-          ({props.comments})・{props.location}
+          ({props.item.stats.reviewCount})・{props.item.location}
         </p>
       </div>
-      <p className="text-xs font-light">{props.discription}</p>
+      <p className="text-xs font-light">{props.item.description}</p>
       <p className=" text-xs font-light">
-        <span className="text-xs font-bold">From £{props.price} </span>/ person
+        <span className="text-xs font-bold">From £{props.item.price} </span>/
+        person
       </p>
     </div>
   );
