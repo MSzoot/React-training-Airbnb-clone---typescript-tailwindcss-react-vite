@@ -1,4 +1,11 @@
-const Card = (props) => {
+const Card = (props: {
+  img: string;
+  rating: number;
+  comments: number;
+  location: string;
+  discription: string;
+  price: number;
+}) => {
   return (
     <div className="ml-10 mt-10 flex w-[176px] flex-col gap-2">
       <img
