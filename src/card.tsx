@@ -5,9 +5,21 @@ const Card = (props: {
   location: string;
   discription: string;
   price: number;
+  openSpots: number;
 }) => {
+  let badgeText;
+  if (props.openSpots === 0) {
+    badgeText = 'SOLD OUT';
+  } else if (props.location === 'Online') {
+    badgeText = 'ONLINE';
+  }
   return (
-    <div className="ml-10 mt-10 flex w-[176px] flex-col gap-2">
+    <div className="relative ml-10 mt-10 flex w-[176px] flex-col gap-2">
+      {badgeText && (
+        <div className="absolute left-2 top-2 rounded-md bg-white px-2 py-1 text-xs  text-black">
+          {badgeText}
+        </div>
+      )}
       <img
         className="mb-2 rounded-2xl"
         src={props.img}

@@ -14,6 +14,7 @@ const App = () => {
         location={exp.location}
         discription={exp.description}
         price={exp.price}
+        openSpots={exp.openSpots}
       />
     );
   });
