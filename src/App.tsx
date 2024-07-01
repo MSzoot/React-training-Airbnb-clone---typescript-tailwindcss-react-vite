@@ -11,7 +11,7 @@ const App = () => {
     <div>
       <Navbar />
       <Hero />
-      <div className="flex">{cards}</div>
+      <div className="flex justify-center">{cards}</div>
     </div>
   );
 };
