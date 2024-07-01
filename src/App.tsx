@@ -1,6 +1,6 @@
 import Navbar from './navbar';
 import Hero from './hero';
-import Card from './Card';
+import Card from './card';
 import data from './data';
 
 const App = () => {
