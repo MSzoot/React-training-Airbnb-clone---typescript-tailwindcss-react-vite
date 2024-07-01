@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import star from '../public/star.png';
+
 const Card = (props: { item: any }) => {
   let badgeText;
   if (props.item.openSpots === 0) {
@@ -20,7 +22,7 @@ const Card = (props: { item: any }) => {
       />
       <div className="flex items-center gap-1">
         {' '}
-        <img className="h-[14px] w-[14px] " src="/public/star.png" alt="" />
+        <img className="h-[14px] w-[14px] " src={star} alt="" />
         <h3 className="text-xs font-light">{props.item.stats.rating}</h3>
         <p
           className="text-xs font-light text-gray-400
